@@ -102,6 +102,7 @@ composer update
 Agora que o arquivo .env foi criado e configurado o banco de dados é necessário gerar a chave(key) do Laravel e criar um link para a pasta storage dentro diretorio public
 ```
 php artisan key:generate
+php artisan storage:link
 
 ```
 
@@ -130,5 +131,5 @@ senha:      Mudar123@
 
 ### Apache
 
-Edite o arquivo sites-enabled/guia_comercial.conf e adicione os certificados corretos
+Edite o arquivo sites-enabled/api.conf e adicione os certificados corretos
 Tem um exemplo dentro da pasta common/apache
