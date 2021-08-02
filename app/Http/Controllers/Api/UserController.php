@@ -27,18 +27,11 @@ class UserController extends Controller
     * @param  \Illuminate\Http\Request  $request
     * @return \Illuminate\Http\Response
     */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
         $data = $request->all();
 
         $user = new User;
-        $validator = Validator::make($data, $user->rules());
-        if($validator->fails()){
-            return response()->json([
-                "status"    =>  "error",
-                "message"   =>  $validator->errors(),
-            ], 400);
-        }
         $response = $user->newInfo($data);
         if($response){
             return response()->json([
