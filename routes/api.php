@@ -23,7 +23,7 @@ Route::post('auth/login', [AuthController::class,'login']);
 
 Route::group(['middleware' => ['apiJwt'] ], function(){
     Route::post('/auth/logout', [AuthController::class, 'logout']);
-    Route::get('/users', [UserController::class, 'index']);
 
+    Route::resource('users', UserController::class);
 });
 
